@@ -1,0 +1,320 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Basic of Java////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+EVERY PROGRAMER FIRST CODE :
+
+public class first
+{
+	public static void  main(String[]args)
+	{
+		System.out.println("HELLO WORLD...");
+
+	}
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+OUTPUT;
+HELLO WORLD...
+
+
+  
+
+WHAT IS JAVA ?
+
+ANS-:  Java program is an object-oriented programming language,
+ that means java is the collection of objects, and these objects communicate through 
+method calls to each other to work together.
+
+Class: The class is a blueprint (plan) of the instance of a class (object). 
+It can be defined as a logical template that share common properties and methods.
+
+Example1: Blueprint of the house is class.
+Example2: In real world, Alice is an object of the “Human” class.
+
+
+2. Object: The object is an instance of a class. It is an entity that has behavior and state.
+
+Example: Dog, Cat, Monkey etc. are the object of “Animal” class.
+Behavior: Running on the road.
+
+
+3. Method: The behavior of an object is the method.
+
+Example: The fuel indicator indicates the amount of fuel left in the car.
+
+
+4. Instance variables: Every object has its own unique set of instance variables. 
+The state of an object is generally created by the values that are assigned to these instance variables.
+
+Example: Steps to compile and run a java program in a console
+
+
+Java Keywords:-
+---------------------
+
+Keywords or Reserved words are the words in a language that are used for some internal process or represent some predefined actions.
+These words are therefore not allowed to use as variable names or objects.
+
+EX:-
+abstract
+
+assert
+
+boolean
+
+break
+
+byte
+
+case
+
+catch
+
+char
+
+class
+
+const
+
+continue
+
+default
+
+do
+
+double
+
+else
+
+enum
+
+extends
+
+final
+
+finally
+
+float  ect.
+
+
+FIRST PROGRAM:-
+-------------------------
+
+
+public class first
+{
+	public static void  main(String[]args)
+	{
+		System.out.println("HELLO WORLD...");
+
+	}
+
+}
+
+1.Class definition
+This line uses the keyword class to declare that a new class is being defined. 
+
+SYNTEX :
+CLASS CLAASS_name{
+}
+
+2.main method: 
+In the Java programming language, every application must contain a main method.
+The main function(method) is the entry point of your Java application, and it’s mandatory in a Java program. whose signature in Java is: 
+
+public static void main(String[] args)
+
+public: So that JVM can execute the method from anywhere.
+
+static: The main method is to be called without an object. The modifiers public and static can be written in either order.
+
+void: The main method doesn’t return anything.
+
+main(): Name configured in the JVM. The main method must be inside the class definition. 
+The compiler executes the codes starting always from the main function.
+
+String[]: The main method accepts a single argument, an array of elements of type String.
+
+System is a predefined class that provides access to the system, and out is the variable of type output stream connected to the console.
+
+
+Data Types:-
+----------------
+
+Data types in Java are of different sizes and values that can be stored in the variable 
+that is made as per convenience and circumstances to cover up all test cases. 
+Java has two categories in which data types are segregated 
+
+Primitive Data Type: such as boolean, char, int, short, byte, long, float, and double.
+
+Non-Primitive Data Type or Object Data type: such as String, Array, etc.
+
+
+Primitive Data Types in Java
+
+Primitive data are only single values and have no special capabilities.  There are 8 primitive data types.
+int,char,float,dobule,byte,boolean,long,short..
+
+
+Non-Primitive Data Type or Reference Data Types:-
+
+The Reference Data Types will contain a memory address of variable values because 
+the reference types won’t store the variable value directly in memory. 
+They are strings, objects, arrays, etc. 
+
+
+
+Primitive data type vs. Object data type:-
+
+
+
+Java Identifiers:-
+-----------------------
+
+In programming languages, identifiers are used for identification purposes.
+ In Java, an identifier can be a class name, method name, variable name, or label. For
+
+ example : 
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        int a = 20;  // a is Identifiers
+
+    }
+}
+
+Operators in Java:-
+--------------------------
+
+Operators in Java are the symbols used for performing specific operations in Java. 
+Operators make tasks like addition, multiplication, etc 
+which look easy although the implementation of these tasks is quite complex.
+
+
+Types of Operators in Java
+There are multiple types of operators in Java all are mentioned below:
+
+Arithmetic Operators
+Unary Operators
+Assignment Operator
+Relational Operators
+Logical Operators
+Ternary Operator
+Bitwise Operators
+Shift Operators
+instance of operator
+
+
+Java Variables:-
+---------------------
+
+Variables are the data containers that save the data values during Java program execution. 
+Every Variable in Java is assigned a data type that designates the type and quantity of value it can hold. 
+A variable is a memory location name for the data.
+
+TYPE OF VARIABLES:-
+
+Local Variables.
+Instance Variables.
+Static Variables.
+
+
+Scope of Variables In Java:-
+-------------------------------------
+
+variable use for  storing data in java. Variables in java can be used/accessed only for the scope within which they are declared and created.
+ we call this feature as java scope.
+
+its is three type of scope var.
+class scope var.
+block scope  var.
+local scope var.
+
+class scope  var :- it is create in class .that var. is use anywhere in a code that calso called globbal var.
+
+local scope var.:-
+it is create in method and use only in method block.  it is store for short time .
+
+block scope var.:-
+ variable declared inside pair of brackets “{” and “}” in a method has scope within the brackets only.
+EX:-
+public class Test
+{
+    public static void main(String args[])
+    {
+        {
+            
+            int x = 10;
+            System.out.println(x);
+        }
+        
+        // System.out.println(x);
+    }
+}
+
+Wrapper Classes :-
+--------------------------
+
+
+
+
+A Wrapper class in Java is a class whose object wraps or contains primitive data types. 
+When we create an object to a wrapper class, it contains a field and in this field, we can store primitive data types. 
+In other words, we can wrap a primitive value into a wrapper class object. 
+
+Primitive Data Type         Wrapper Classes
+
+ char                                    Character                              
+
+byte                                     Byte
+
+short                                   Short
+
+int                                       Integer  
+
+long                                    Long
+
+float                                   Float
+
+double                               Double
+
+boolean                             Boolean
+
+
+
+Autoboxing:-
+
+In Autoboxing can we convert Primitive Data Types to object.
+
+CODDE:-
+
+public class WrapperExample1{  
+public static void main(String args[]){  
+int a=20;  
+Integer i=Integer.valueOf(a);      //converting int into Integer explicitly  
+Integer j=a;         //autoboxing, now compiler will write Integer.valueOf(a) internally  
+  
+System.out.println(a+" "+i+" "+j);  
+}}  
+
+ Unboxing:-
+
+In Unboxing can we convert object to primitive data type.
+
+
+CODE:-
+public class WrapperExample2{    
+public static void main(String args[]){    
+//Converting Integer to int    
+Integer a=new Integer(3);    
+int i=a.intValue();   //converting Integer to int explicitly  
+int j=a;                  //unboxing, now compiler will write a.intValue() internally    
+    
+System.out.println(a+" "+i+" "+j);    
+}}    
+
+
+
+
+

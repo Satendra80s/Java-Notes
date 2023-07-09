@@ -1,0 +1,130 @@
+How to Take Input From User in Java ?
+
+
+In java we can take input from user  using Scanner,BufferedReader. Both method is in .io packages.
+
+
+*Scanner
+*BufferedReader.
+
+BufferedReader:-
+-----------------------
+it help to the user for input output opertions.
+It is a simple class that is used to read a sequence of characters. It has a simple function that reads a character another read which reads, 
+an array of characters, and a readLine() function which reads a line.
+InputStreamReader() is a function that converts the input stream of bytes into a stream of characters so that 
+it can be read as BufferedReader expects a stream of characters.
+
+CODE:-
+
+public class inupt
+{
+	public static void main(String[]args) throws IOException
+		{
+			BufferReader  bfn = new BufferReader(new InputStreamReader(System.in));
+
+			String str = bfn.readLine();
+			int num =  Integer.parseInt(bfn.readLine());
+			System.out.println(str);
+			System.out.println(num);
+
+		}
+}
+
+also we can use try catch function for exception;
+
+Scanner :-
+------------
+it is an advanced version of BufferedReader which was added in later versions of Java. 
+The scanner can read formatted input. It has different functions for different types of data types. 
+
+Syntax: 
+
+Scanner scn = new Scanner(System.in);
+
+
+Method
+/
+Description
+
+ nextBoolean()                       
+Used for reading Boolean value                    
+
+nextByte()
+Used for reading Byte value
+
+nextDouble()
+Used for reading Double value
+
+nextFloat()
+Used for reading Float value
+
+nextInt()
+Used for reading Int value
+
+nextLine()
+Used for reading Line value
+
+nextLong()
+Used for reading Long value
+
+nextShort()
+Used for reading Short value
+
+
+Java.io.BufferedReader Class in Java:-
+----------------------------------------------------
+method:
+close()	Closes the stream and releases any system resources associated with it.Once the stream has been closed, further read(), ready(), mark(), reset(), or skip() invocations will throw an IOException. Closing a previously closed stream has no effect.
+mark()	Marks the present position in the stream. Subsequent calls to reset() will attempt to reposition the stream to this point.
+markSupported()	Tells whether this stream supports the mark() operation, which it does.
+read()	Reads a single character.
+read(char[] cbuf, int off, int len)	Reads characters into a portion of an array. This method implements the general contract of the corresponding read method of the Reader class. 
+As an additional convenience, it attempts to read as many characters as possible by repeatedly invoking the read method of the underlying stream.
+readLine()	Reads a line of text. A line is considered to be terminated by any one of a line feed (‘\n’), a carriage return (‘\r’), or a carriage return followed immediately by a line feed.
+ready()	Tells whether this stream is ready to be read.
+reset()	Resets the stream to the most recent mark.
+skip(long)	Skips characters.
+
+
+
+System.out.println in Java
+------------------------------------
+
+Java System.out.println() is used to print an argument that is passed to it.
+ The statement can be broken into 3 parts which can be understood separately as:
+
+System: It is a final class defined in the java.lang package.
+out: This is an instance of PrintStream type, which is a public and static member field of the System class.
+println(): As all instances of PrintStream class have a public method println(), hence we can invoke the same on out as well. 
+This is an upgraded version of print(). It prints any argument passed to it and adds a new line to the output. 
+We can assume that System.out represents the Standard Output Stream.
+
+
+System.in: This is the standard input stream that is used to read characters from the keyboard or any other standard input device.
+Example:
+InputStreamReader inp = new InputStreamReader(System.in);
+System.err: This is the standard error stream that is used to output all the error data that a program might throw, on a computer screen or any standard output device.
+Example:
+System.err.print("Error");
+
+
+Difference between System.out.print() and System.out.println()
+
+System.out.print(): This method prints the text on the console and the cursor remains at the end of the text at the console.
+ The next printing takes place from just here. This method must take atleast one parameter else it will throw an error.
+
+System.out.println(): This method prints the text on the console and the cursor remains at the start of the next line at the console. 
+The next printing takes place from the next line. This method may or may not take any parameter.
+
+
+Formatted output in Java:-
+------------------------------------
+
+There are different ways in which we can format output in Java. Some of them are given below.
+
+Using System.out.printf()
+Using DecimalFormat class
+Using SimpleDateFormat class (for formatting Dates)
+
+

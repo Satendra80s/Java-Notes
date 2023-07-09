@@ -1,0 +1,428 @@
+Decision Making in Java (if, if-else, switch, break, continue, jump):-
+-----------------------------------------------------------------------------------------
+A programming language uses control statements to control the flow of execution of a program based on certain conditions.
+These are used to cause the flow of execution to advance and branch based on changes to the state of a program. 
+
+Java’s Selection statements: 
+
+if
+if-else
+nested-if
+if-else-if
+switch-case
+jump – break, continue, return
+
+. if: if statement is the most simple decision-making statement.
+ It is used to decide whether a certain statement or block of statements will be 
+executed or not i.e if a certain condition is true then a block of statements is executed otherwise not. 
+
+SYNTEX:-
+
+if(condition)
+{
+//statement to execute
+}
+
+Program:-
+
+class IfDemo
+{
+	public static void main(String[]args)
+	{
+		int i=10;
+		if(i<15)
+		{
+			System.out.println("condition true");
+		}
+	}
+}
+
+f-else: The if statement alone tells us that if a condition is true 
+it will execute a block of statements and if the condition is false it won’t. 
+But what if we want to do something else if the condition is false? 
+Here comes the else statement. We can use the else statement with 
+the if statement to execute a block of code when the condition is false. 
+
+Syntax: 
+
+if (condition)
+{
+    // Executes this block if 
+}
+else
+{
+    // condition is false
+}
+
+CODE:-
+
+class  ifelseDemo
+{
+	public static void main(String[]args)
+	{
+		int i=10
+		if(i>15)
+		{
+			System.out.println(" i is garter than 15");
+		}
+		else
+		{
+			System.out.println("i is less than 15 ");
+		}
+
+	}
+}
+
+nested-if: 
+
+Nested if statements mean an if statement inside an if statement. 
+Yes, java allows us to nest if statements within if statements. i.e, 
+we can place an if statement inside another if statement. 
+
+if (condition1) 
+{
+   // Executes when condition1 is true
+   if (condition2) 
+   {
+      // Executes when condition2 is true
+   }
+}
+
+CODE:-
+
+class nested
+{
+public static void main(String[]args)
+{
+	int i=10;
+	if(1==10 || i<15)
+	{
+		if(i<15)
+		{
+			Systeem.out.println("i is smaller than 15");
+		}
+
+		if(1<13)
+		{
+			System.out.println("i is smaller than 12 ");
+		}
+	}
+
+		else{
+			Sytstem.out.println("i is grater than 15");
+
+			}
+}
+}
+
+if-else-if ladder: Here, a user can decide among multiple options.
+The if statements are executed from the top down. As soon as one of the conditions controlling the if is true, 
+the statement associated with that ‘if’ is executed, and the rest of the ladder is bypassed. If none of the conditions is true, 
+then the final else statement will be executed. 
+There can be as many as ‘else if’ blocks associated with one ‘if’ block but only one ‘else’ block is allowed with one ‘if’ block.
+
+if (condition)
+    statement;
+else if (condition)
+    statement;
+.
+.
+else
+    statement;
+
+
+class ifelseifDemo
+{
+	public static void main(String[]args)
+	{
+	int i=30;
+	if(i==10)
+	{
+		System.out.println(" 1i is 10");
+	}
+	else if(i ==15)
+	{
+	System.out.println("i is 15");
+	}
+          else if(i==20)
+	{
+	System.out.println("i is 20");
+	}
+	else
+	{
+	System.out.println(" i is not present ");
+	}
+	}
+}
+
+
+
+switch-case:-
+-----------------
+
+The switch statement is a multiway branch statement. 
+It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+Syntax:-
+
+switch (expression)
+{
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+  .
+  .
+  case valueN:
+    statementN;
+    break;
+  default:
+    statementDefault;
+}
+
+CODE:-
+class switch
+{
+	public static void main(String[]args)
+	{
+		int i=10;
+	 	
+		switch(i){
+case1:
+System.out.println(it is 1);
+break;
+case2:
+System.out.println(it is 2);
+break;
+case3:
+System.out.println(it is 3);
+break;	
+
+default:
+System.out.println("Not present");
+			}
+	}
+}
+
+jump:
+--------
+ Java supports three jump statements: break, continue and return. 
+These three statements transfer control to another part of the program.
+
+Break: 
+---------
+In Java, a break is majorly used for: 
+Terminate a sequence in a switch statement (discussed above).
+To exit a loop.
+Used as a “civilized” form of goto.
+
+Continue:
+--------------
+Sometimes it is useful to force an early iteration of a loop. 
+That is, you might want to continue running the loop but stop processing the
+
+Return: 
+----------
+The return statement is used to explicitly return from a method. 
+That is, it causes program control to transfer back to the caller of the method.
+
+
+
+
+Q. What is the if-else in Java?
+
+If-else is conditional statements that execute according to the correct statement executed. 
+If the if condition is true then the code block inside the if statement is executed else it executes the else statement block.
+
+
+Loops in Java:-
+-------------------
+
+
+Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true. 
+Java provides three ways for executing the loops. 
+While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.
+
+type of loop:-
+for loop:
+while loop:
+do while loop:
+
+
+while loop: A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. 
+The while loop can be thought of as a repeating if statement. 
+
+Syntax :
+
+while (boolean condition)
+{
+   loop statements...
+}
+
+Once the condition is evaluated to true, the statements in the loop body are executed. 
+Normally the statements contain an update value for the variable being processed for the next iteration.
+
+
+CODE:-
+
+class loopDemo
+{
+public static void main(String[]args)
+{
+int i=10;
+while(i<=10)
+{
+System.out.println(" "+i );
+i++;
+}
+}
+}
+
+
+for loop: for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the initialization,
+ condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping. 
+
+
+Syntax:
+
+for (initialization condition; testing condition;increment/decrement)
+{
+    statement(s)
+}
+
+CODE:
+
+class main
+{
+public static void main(String[]args)
+{
+int arr[]={1,2,3,4,5,6};
+for(int i=0;i<arr.length;i++ )
+{
+System.out.println(arr[i]);
+}
+}
+}
+
+do while: do while loop is similar to while loop with only difference that it checks for condition after executing 
+the statements, and therefore is an example of Exit Control Loop. 
+
+Syntax:
+
+do
+{
+    statements..
+}
+while (condition);
+
+
+CODE:
+
+class main
+{
+ public static void main (String[] args) {
+      int i=0;
+      do
+      {
+        System.out.println(i);
+        i++;
+      }while(i<=10);
+    }
+}
+
+
+Infinite loop: One of the most common mistakes while implementing any sort of looping is that it may not ever exit, that is the loop runs for infinite time. This happens when the condition fails for some reason. Examples: 
+Infinite for loop :
+
+/*package whatever //do not write package name here */
+ 
+import java.io.*;
+ 
+class GFG {
+    public static void main(String[] args)
+    {
+        for (;;) {
+        }
+    }
+}
+
+
+infinite while loop:
+
+import java.io.*;
+ 
+class GFG {
+    public static void main (String[] args) {
+       while (true)
+       {
+         // statement
+       }
+       
+    }
+}
+
+
+For-each loop in Java:-
+
+It starts with the keyword for like a normal for-loop.
+Instead of declaring and initializing a loop counter variable, you declare a variable that is the same type as the base type of the array, followed by a colon, which is then followed by the array name.
+In the loop body, you can use the loop variable you created rather than using an indexed array element. 
+ 
+It’s commonly used to iterate over an array or a Collections class (eg, ArrayList)
+
+Syntax: 
+
+for (type var : array) 
+{ 
+    statements using var;
+}
+
+
+CODE:-
+
+class Easy
+  
+{
+  
+    public static void main(String[] args)
+  
+    {
+  
+        // array declaration
+  
+        int ar[] = { 10, 50, 60, 80, 90 };
+  
+        for (int element : ar)
+  
+            System.out.print(element + " ");
+    }
+}
+
+
+return keyword in Java:-
+--------------------------------
+
+eturn is a reserved keyword i.e, we can’t use it as an identifier. 
+It is used to exit from a method, with or without a value. Usage of return keyword as there exist two ways as listed below as follows: 
+
+
+CODE:-
+
+public class retuendemo{
+
+int sum()
+{
+int a=10
+int  b=20;
+sum =a+b;
+
+return sum;
+}
+public static void main(String[]args)
+{
+System.out.println("return Demo.....");
+
+}
+}
