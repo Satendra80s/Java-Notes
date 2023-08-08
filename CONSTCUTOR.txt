@@ -1,0 +1,155 @@
+constructor:
+ 
+copy constructor:-
+
+Java also supports a copy constructor. But, unlike C++, Java doesn’t create a default copy constructor if you don’t write your own.
+ A prerequisite prior to learning copy constructors is to learn about constructors in java to deeper roots.
+
+Q. When do we need Constructor Overloading?
+Sometimes there is a need of initializing an object in different ways. This can be done using constructor overloading.
+
+ For example, the Thread class has 8 types of constructors. If we do not want to specify anything about a thread then we can simply use the default constructor of the Thread class, however, if we need to specify the thread name, then we may call the parameterized constructor of the Thread class with a String args like this:
+
+Thread t= new Thread (" MyThread "); 
+
+
+
+CODE:-
+
+class Box {
+	double width, height, depth;
+
+	Box(double w, double h, double d)
+	{
+		width = w;
+		height = h;
+		depth = d;
+	}
+
+	Box() { width = height = depth = 0; }
+
+	Box(double len) { width = height = depth = len; }
+
+	double volume() { return width * height * depth; }
+}
+
+// Driver code
+public class Test {
+	public static void main(String args[])
+	{
+		Box mybox1 = new Box(10, 20, 15);
+		Box mybox2 = new Box();
+		Box mycube = new Box(7);
+
+		double vol;
+		vol = mybox1.volume();
+		System.out.println("Volume of mybox1 is " + vol);
+
+	
+		vol = mybox2.volume();
+		System.out.println("Volume of mybox2 is " + vol);
+
+		vol = mycube.volume();
+		System.out.println("Volume of mycube is " + vol);
+	}
+}
+
+
+Using this() in Constructor Overloading
+this() reference can be used during constructor overloading to call the default constructor implicitly from the parameterized constructor. 
+
+
+Code:-
+
+
+
+
+1. Differentiate Constructors Overloading vs Method Overloading.
+
+Answer:-
+
+Strictly speaking, constructor overloading is somewhat similar to method overloading. 
+If we want to have different ways of initializing an object using a different number of parameters, 
+then we must do constructor overloading as we do method overloading when we want different 
+definitions of a method based on different parameters. 
+
+
+Constructor Chaining In Java :-
+--------------------------------------------
+
+Constructor chaining is the process of calling one constructor from another constructor with respect to current object. 
+
+One of the main use of constructor chaining is to avoid duplicate codes while having 
+multiple constructor (by means of constructor overloading) and make code more readable.
+
+
+Constructor chaining can be done in two ways: 
+ 
+
+* Within same class: It can be done using this() keyword for constructors in the same class
+
+* From base class: by using super() keyword to call the constructor from the base class.
+
+// Java program to illustrate Constructor Chaining
+// within same class Using this() keyword
+class Temp
+{
+	Temp()
+	{
+		// calls constructor 2
+		this(5);
+		System.out.println("The Default constructor");
+	}
+
+	Temp(int x)
+	{
+		// calls constructor 3
+		this(5, 15);
+		System.out.println(x);
+	}
+
+	Temp(int x, int y)
+	{
+		System.out.println(x * y);
+	}
+
+	public static void main(String args[])
+	{
+		new Temp();
+	}
+}
+
+
+
+
+
+Private Constructors and Singleton Classes in Java:-
+---------------------------------------------------------------------
+
+Can we have private constructors ?
+
+As you can easily guess, like any method we can provide access specifier to the constructor. If it’s made private, then it can only be accessed inside the class.
+There are various scenarios where we can use private constructors. The major ones are
+
+Internal Constructor chaining
+Singleton class design pattern
+
+
+
+What is a Singleton class?
+
+As the name implies, a class is said to be singleton if it limits the number of objects of that class to one.
+
+We can’t have more than a single object for such classes.
+
+Singleton classes are employed extensively in concepts like Networking and Database Connectivity.
+
+
+
+
+
+
+
+
+
+

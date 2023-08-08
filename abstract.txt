@@ -1,0 +1,275 @@
+Java Does not support opertor overrriden and  overloading .
+
+Java does not support construtor overrreding.
+
+Java does support  constructor overlodinng.
+
+
+abstract keyword in java:-
+----------------------------------
+
+
+abstract is a non-access modifier in java applicable for classes, and methods but not variables. It is used to achieve abstraction .
+
+
+Q.  Abstract methods do not have a body:
+
+ An abstract method is a method that does not have an implementation. 
+It is declared using the abstract keyword and ends with a semicolon instead of a method body.
+
+
+Q.  Abstract classes cannot be instantiated:
+
+ An abstract class is a class that cannot be instantiated directly. Instead, it is meant to be extended by other classes, 
+
+
+Q. Abstract classes can have constructors:-
+ 
+Abstract classes can have constructors, which are used to initialize instance variables and perform other initialization tasks. 
+However, because abstract classes cannot be instantiated directly,
+
+Q. Abstract classes can have both abstract and concrete methods:-
+
+Abstract classes can contain both abstract and concrete methods. Concrete methods are implemented in 
+the abstract class itself and can be used by both the abstract class and its subclasses.
+
+Q. Abstract classes can implement interfaces:- 
+
+Abstract classes can implement interfaces, which define a set of methods that must be implemented by any class that implements the interface. 
+In this case, the abstract class must provide concrete implementations of all methods defined in the interface.
+
+
+Q.  can be define method  in interface ?
+
+
+CODE:-
+
+    abstract void printInfo();
+}
+ 
+// Child Class
+class employee extends gfg {
+    void printInfo()
+    {
+        String name = "aakanksha";
+        int age = 21;
+        float salary = 55552.2F;
+ 
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(salary);
+    }
+}
+ 
+// driver Class
+class base {
+    // main function
+    public static void main(String args[])
+    {
+        // object created
+        gfg s = new employee();
+        s.printInfo();
+    }
+}
+
+
+
+***NOTE:-
+-------------
+
+Although abstract classes cannot be used to instantiate objects, they can be used to create object references, 
+because Java’s approach to run-time polymorphism is implemented through the use of super-class references.
+ Thus, it must be possible to create a reference to an abstract class so that it can be used to point to a subclass object.
+
+
+you will never see a class or method declared with both final and abstract keywords. For classes, 
+final is used to prevent inheritance whereas abstract classes depend upon their child classes for complete implementation. 
+In cases of methods, final is used to prevent overriding whereas abstract methods need to be overridden in sub-classes.
+
+
+
+
+What is Abstract class in Java?
+Java abstract class is a class that can not be initiated by itself, it needs to be subclassed by another class to use its properties.
+ An abstract class is declared using the “abstract” keyword in its class definition.
+
+
+the following some important observations about abstract classes are as follows:
+
+*An instance of an abstract class can not be created.
+
+*Constructors are allowed.
+
+*We can have an abstract class without any abstract method.
+
+*There can be a final method in abstract class but any abstract method in class(abstract class) can not be declared as final  or 
+in simpler terms final method can not be abstract itself as it will yield an error: “Illegal combination of modifiers: abstract and final”
+
+*We can define static methods in an abstract class
+
+*We can use the abstract keyword for declaring top-level classes (Outer class) as well as inner classes as abstract
+
+*If a class contains at least one abstract method then compulsory should declare a class as abstract 
+
+*If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that Child class as abstract 
+So that the next level Child class should provide implementation to the remaining abstract method.
+
+
+
+1. What is an abstract class in Java?
+An abstract class in Java is a class that can not be initiated on its own but can be used as a subclass by another class.
+
+2. What is the abstract class purpose?
+The main purpose of the abstract class is to create a base class from which many other classes can be derived.
+
+3. What is the main advantage of abstract class?
+An abstract class provides the provides of data hiding in Java.
+
+4. Why abstract class is faster than interface?
+An abstract class is faster than an interface because the interface involves a search before calling any overridden method in Java whereas abstract class can be directly used. 
+
+
+Control Abstraction in Java with Examples:-
+-------------------------------------------------------------
+
+
+In abstraction, there are two types: Data abstraction and Control abstraction.
+
+
+
+Data abstraction, in short means creating complex data types but giving out only the essentials operations.
+
+Control Abstraction: This refers to the software part of abstraction wherein the program is simplified and unnecessary execution details are removed.
+
+Here are the main points about control abstraction:
+
+* Control Abstraction follows the basic rule of DRY code which means Don’t Repeat Yourself and using functions in a program is the best example of control abstraction.
+
+
+* Control Abstraction can be used to build new functionalities and combines control statements into a single unit.
+
+* It is a fundamental feature of all higher-level languages and not just java.
+
+* Higher-order functions, closures, and lambdas are few preconditions for control abstraction.
+
+* Highlights more on how a particular functionality can be achieved rather than describing each detail.
+
+* Forms the main unit of structured programming.
+
+CODE:-
+-------
+
+abstract class Vehicle {
+
+    // Abstract method (does not have a body)
+    public abstract void VehicleSound();
+   
+
+    public void honk() 
+{ System.out.println("honk honk"); }
+}
+ 
+// Subclass (inherit from Vehicle)
+class Car extends Vehicle {
+    public void VehicleSound()
+    {
+        // The body of VehicleSound() is provided here
+        System.out.println("kon kon");
+    }
+}
+ 
+class Main {
+    public static void main(String[] args)
+    {
+        // Create a Car object
+        Car myCar = new Car();
+        myCar.VehicleSound();
+        myCar.honk();
+    }
+}
+
+Difference between Abstraction and Encapsulation in Java with Examples:-
+
+
+Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates. 
+Another way to think about encapsulation is, that it is a protective shield that prevents the data from being accessed by the code outside this shield. 
+As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding. 
+Encapsulation can be achieved by Declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables. 
+
+
+CODE:-
+----------
+
+
+// Java program to demonstrate encapsulation
+
+class Encapsulate {
+
+	
+	private String Name;
+	private int Roll;
+	private int Age;
+
+	
+	public int getAge() { return Age; }
+
+	
+	public String getName() { return Name; }
+
+	
+	public int getRoll() { return Roll; }
+
+	
+	public void setAge(int newAge) { Age = newAge; }
+
+
+	public void setName(String newName)
+	{
+		Name = newName;
+	}
+
+	
+	public void setRoll(int newRoll) { Roll = newRoll; }
+}
+
+public class TestEncapsulation {
+	public static void main(String[] args)
+	{
+		Encapsulate obj = new Encapsulate();
+
+		
+		obj.setName("Harsh");
+		obj.setAge(19);
+		obj.setRoll(51);
+
+		
+		System.out.println("Geek's name: " + obj.getName());
+		System.out.println("Geek's age: " + obj.getAge());
+		System.out.println("Geek's roll: " + obj.getRoll());
+
+		
+	}
+}
+
+
+
+Difference between Abstraction and Encapsulation:
+
+Abstraction                                                                                                                                Encapsulation
+Abstraction is the process or method of gaining the information.	  While encapsulation is the process or method to contain the information.
+
+In abstraction, problems are solved at the design or interface level.	  While in encapsulation, problems are solved at the implementation level.
+
+Abstraction is the method of hiding the unwanted information.	  Whereas encapsulation is a method to hide the data in a single entity or unit along with 
+                                                                                                                           a method to protect information from outside.
+
+We can implement abstraction using abstract class and interfaces.	  Whereas encapsulation can be implemented using by access modifier i.e. private, protected and public.
+
+In abstraction, implementation complexities are hidden using             While in encapsulation, the data is hidden using methods of getters and setters.
+abstract classes and interfaces.
+
+The objects that help to perform abstraction are encapsulated.	  Whereas the objects that result in encapsulation need not be abstracted.
+
+Abstraction provides access to specific part of data.	                                Encapsulation hides data and the user can not access same directly (data hiding.
+
+

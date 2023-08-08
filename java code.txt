@@ -1,0 +1,63 @@
+
+Wrapper Classes in Java
+
+public class Input {
+
+	public static void main(String[] args) {
+		
+		//Wrapper Classes in Java
+		//Autoboxing .............
+		int a=23;
+		Integer b=a;
+		System.out.println("Wrapper class"+b);
+		
+		//unboxing......
+		Integer c=2300;
+		int d=c;
+		
+		Integer s=new Integer(c);
+		System.out.println(d+" "+s);
+	}
+
+}
+
+
+How to take Input from user.
+
+USING BUFFEREDREADER:-
+
+import java.io.*;
+
+public class Input {
+
+	public static void main(String[] args) throws IOException {
+		System.out.println("enter your name");
+		
+		BufferedReader bnf=new BufferedReader(new InputStreamReader(System.in));
+		String str=bnf.readLine();
+		System.out.println("your name");
+		System.out.println(str);
+	}
+
+}
+
+
+
+USING SCANNER:-
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Input {
+
+	public static void main(String[] args) {
+		System.out.println("enter your name");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println(sc);
+	}
+
+}
+
+

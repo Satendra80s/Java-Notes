@@ -1,0 +1,120 @@
+Polymorphism: 
+Polymorphism is that in which we can perform a task in multiple forms or ways. It is applied to the functions or methods.
+ Polymorphism allows the object to decide which form of the function to implement at compile-time as well as run-time.
+
+Types of Polymorphism 
+
+* Compile-time polymorphism (Method overloading)
+
+* Run-time polymorphism (Method Overriding)
+
+
+
+Dynamic Method Dispatch or Runtime Polymorphism in Java:-
+-----------------------------------------------------------------------------------
+
+
+
+
+
+Difference between Compile-time and Run-time Polymorphism in Java:-
+------------------------------------------------------------------------------------------------
+
+The word polymorphism means having many forms. In simple words, 
+we can define polymorphism as the ability of a message to be displayed in more than one form.
+ In this article, we will see the difference between two types of polymorphisms, compile time and run time. 
+
+
+Method Overloading :-
+
+says you can have more than one function with the same name in one class having a different prototype. 
+Function overloading is one of the ways to achieve polymorphism but it depends on technology and which type of polymorphism we adopt.
+In java, we achieve function overloading at compile-Time.we achieve function overloading at compile-Time.
+
+
+
+CODE:-
+
+
+public class GFG {
+
+	public static int add(int a, int b)
+	{
+		return a + b;
+	}
+
+	public static double add(
+		double a, double b)
+	{
+		return a + b;
+	}
+
+
+	public static void main(String args[])
+	{
+		
+		System.out.println(add(2, 3));
+
+		System.out.println(add(2.0, 3.0));
+	}
+}
+
+
+
+Method overriding :-
+
+says the child class has the same method as declared in the parent class.It means if the child class provides the specific implementation of the method 
+that has been provided by one of its parent classes then it is known as method overriding.
+
+
+
+CODE:-
+
+
+class Test {
+
+	public void method()
+	{
+		System.out.println("Method 1");
+	}
+}
+public class GFG extends Test {
+
+	public void method()
+	{
+		System.out.println("Method 2");
+	}
+	public static void main(String args[])
+	{
+		Test test = new GFG();
+
+		test.method();
+	}
+}
+
+
+The following table demonstrates the difference between runtime polymorphism and compile-time polymorphism:
+
+Compile Time Polymorphism	                                                                                             Run time Polymorphism
+In Compile time Polymorphism, the call is resolved by the compiler.	     In Run time Polymorphism, the call is not resolved by the compiler.
+
+It is also known as Static binding, Early binding and overloading as well.	     It is also known as Dynamic binding, Late binding and overriding as well.
+
+Method overloading is the compile-time polymorphism where more than      Method overriding is the runtime polymorphism having the same method with same                                                                                                                    
+one methods share the same name with different parameters or signature    parameters or signature but associated withcompared, different classes.
+and different return type.	
+
+It is achieved by function overloading and operator overloading.	               It is achieved by virtual functions and pointers.
+
+It provides fast execution because the method that needs to                             It provides slow execution as compare to early binding because the method that needs to be
+be executed is known early at the compile time.	                                            executed is known at the runtime.
+
+Compile time polymorphism is less flexible as all things execute at                Run time polymorphism is more flexible as all things execute at run time.
+compile time.	
+Inheritance is not involved. 	Inheritance is involved.
+
+
+
+
+
+

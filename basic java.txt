@@ -231,7 +231,7 @@ class scope var.
 block scope  var.
 local scope var.
 
-class scope  var :- it is create in class .that var. is use anywhere in a code that calso called globbal var.
+class scope  var :- it is create in class .that var. is use anywhere in a code that also called globbal var.
 
 local scope var.:-
 it is create in method and use only in method block.  it is store for short time .
@@ -255,9 +255,6 @@ public class Test
 
 Wrapper Classes :-
 --------------------------
-
-
-
 
 A Wrapper class in Java is a class whose object wraps or contains primitive data types. 
 When we create an object to a wrapper class, it contains a field and in this field, we can store primitive data types. 

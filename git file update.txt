@@ -1,0 +1,5 @@
+git   add //file ko local repo ma add karne 
+git commit -m ""
+git push origin master ;
+
+git status//

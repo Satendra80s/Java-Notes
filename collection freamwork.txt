@@ -1,0 +1,203 @@
+Java Collection :-
+---------------------
+
+Java Collection Framework is unlikely any group of individual objects which are represented as a single unit be it of any type is known as the collection of objects. 
+Earlier in Java, there was no such thing defined which holds true for it so there arises a need in the next versions of any such conce
+
+
+What is a Framework?
+
+A framework is a set of classes and interfaces which provide a ready-made architecture. 
+In order to implement a new feature or a class, there is no need to define a framework. 
+
+Need for a Separate Collection Framework:
+
+Before Collection Framework(or before JDK 1.2) was introduced, 
+the standard methods for grouping Java objects (or collections) were Arrays or Vectors, or Hashtables. 
+All of these collections had no common interface. 
+
+
+The following 6 interfaces are described below first later on been discussed with clean java programs as in implementation.
+
+Collection interface
+List interface
+Queue interface
+Deque interface (Double-ended queue)
+Set interface
+Map
+
+
+Collection Interface contains all the basic methods which every collection has like 
+adding the data into the collection, removing the data, clearing the data, etc.
+
+List Interface
+It is a child interface of the collection interface. This interface is dedicated to 
+the data of the list type in which we can store all the ordered collections of the objects. 
+This deals with the index or position-specific functions like getting an element or setting an element.
+
+
+
+ArrayList:-
+--------------
+ ArrayList provides us with dynamic arrays in Java. The size of an ArrayList is increased automatically 
+if the collection grows or shrinks if the objects are removed from the collection.
+
+Add an Element in an ArrayList
+Remove an Element in an ArrayList
+Update an Element in an ArrayList
+Remove duplicates from an ArrayList
+Reverse an ArrayList
+Converting ArrayList to String
+Getting a sub-list from an ArrayList
+
+
+ LinkedList:-
+---------------
+ LinkedList is class is an implementation of a doubly-linked list data structure.
+
+Access Elements of a LinkedList 
+Add Elements to a LinkedList
+Check if the LinkedList contains the Element 
+Change Elements of a LinkedList
+Remove All Elements from a LinkedList 
+Iterate over LinkedList using Iterator
+
+
+
+ Vector :-
+-------------
+ Vector provides us with dynamic arrays in Java. 
+This is a legacy class. It is a thread-safe class. This is not recommended being used in a 
+single-threaded environment as it might cause extra overheads.
+
+Adding Elements in Vector
+Removing Elements From Vector
+Replacing Elements in the Vector
+Check if Vector Has Elements or not
+Iterating the Vector Elements in Reverse Order
+Copying Elements of One Java Vector to Another
+Maximum and Minimum Element From Vector
+
+
+
+4. Stack is a class is based on the basic principle of last-in-first-out. This is a legacy class. 
+This inherits from a Vector class. It is also a thread-safe class. 
+This is not recommended being used in a single-threaded environment as it might cause extra overheads. 
+
+Check Whether the Stack is Empty or Not
+Search Element in Stacks
+Access Top Element at the Top of Stack 
+Add the Element in the Stack
+Removing of Element From the Stack
+
+
+
+5. AbstractList: 
+ class in Java provides a skeletal implementation of the List interface to minimize the effort required to implement 
+this interface backed by a Random Access data store (such as an array). For sequential access data (such as a linked list), 
+AbstractSequentialList should be used in preference to this class. 
+It implements the Collection interface and the AbstractCollection class.
+
+
+
+6. AbstractSequentialList: 
+class provides a skeletal implementation of the List interface to minimize 
+the effort required to implement this interface backed by a “sequential access” data store (such as a linked list). 
+For random access data (such as an array), AbstractList should be used in preference to this class. 
+It is used to implement an unmodifiable list, for which one needs to only extend this AbstractList 
+Class and implement only the get() and the size() methods.
+
+
+
+
+Set Interface:
+
+It is an unordered collection of objects in which duplicate values cannot be stored. 
+This set interface is implemented by various classes like HashSet, TreeSet, LinkedHashSet, etc.
+
+
+HashSet:
+ is an inherent implementation of the hash table data structure or Hashing. The objects that we insert into the HashSet do not guarantee to be inserted in the same order. 
+The objects are inserted based on their hash code.
+
+Traversing through a HashSet
+Printing Elements of a HashSet
+Getting Random Element from a HashSet
+Finding Maximum and Minimum Element from HashSet
+Sorting Elemnets of HashSet
+Convert List to HashSet
+Convert Array to HashSet 
+
+AbstractSet:
+ class implements the Collection interface and extends the AbstractCollection class. 
+It provides a skeletal implementation of the Set interface. 
+This class does not override any of the implementations from the 
+AbstractCollection class, but merely adds implementations for equals() and hashCode() method.
+
+
+LinkedHashSet is very similar to a HashSet. The difference is that this uses a doubly linked list to store the data and retains the ordering of the elements.
+
+Accessing LinkedHashSet elements by Index
+Removing elements from a LinkedHashSet
+Union of Sets in LinkedHashSets
+Difference Between LinkedHashSet, TreeSet, and HashSet
+
+
+SortedSet Interface
+It is present in java.util package extends the Set interface present in the collection framework. 
+It is an interface that implements the mathematical set. This interface contains the methods inherited from 
+the Set interface and adds a feature that stores all the elements in this interface to be stored in a sorted manner.
+
+1. TreeSet class is an implementation of the Self-balancing binary tree-like a red-black tree. 
+The ordering of the elements is maintained by a set using their natural ordering.
+
+Difference between EnumSet and TreeSet
+Creating a TreeSet with a List
+Remove duplicate entries from an array in TreeSet
+Getting the Least Value Element From a Set Using Sorting Logic on TreeSet
+
+
+
+
+
+Map Interface
+Map is a data structure that supports the key-value pair mapping for the data. 
+It is mainly used in the scenarios where Students are needed to be searched or removed or added according to 
+the roll numbers or in item-frequency scenarios where items are stored along with their frequencies.
+
+HashTable: class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. 
+To successfully store and retrieve objects from a hash table, the objects used as keys must implement the hashCode method and the equals method.
+
+Adding Elements to HashTable
+Removing Elements from HashTable
+How HashTable Works?
+Getting the Size of HashTable
+Difference Between HashTable and HashMap 
+
+HashMap uses a technique called Hashing. It provides the basic implementation of the Map interface of Java. 
+It stores the data in (Key, Value) pairs. To access a value in a HashMap, we must know its key.
+
+Add an Element to HashMap
+Remove an Element from HashMap
+Replace Elements in a HashMap
+Sort HashMap by Value
+
+
+Queue Interface:
+Queue maintains the FIFO(First In First Out) order similar to a real-world queue line. 
+This interface is dedicated to storing all the elements where the order of the elements matter consisting 
+of the PriorityQueue, LinkedList, and ArrayDeque.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

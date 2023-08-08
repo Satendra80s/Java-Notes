@@ -1,0 +1,75 @@
+Day 2
+--------
+
+Q. 1  
+Occurrence of Digits in a Range.
+
+1 to 20
+
+how many time  1 come
+
+1,11,12,13,,14,15,16,17,18,19 
+
+total 11 time 1 come 
+
+output :- 11
+
+50 to 60
+
+how many time 5 come
+
+output :- 11 
+
+
+
+Code
+
+
+
+public class DAY2 {
+
+		static int digits(int lower,int uper,int digit)
+		{
+			int count =0;
+		
+			for(int i=lower;i<=uper;i++)
+			{
+				int temp=i;
+			    while(temp>0)
+			    {
+			    	if(temp%10==digit) 
+			    		count=count+1;
+			    		temp=temp/10;
+			    }  
+			  
+			}
+			return count;
+		}
+			public static void main(String[] args) {
+	
+				int  l=50;
+				int u=60;
+				int dig=5;
+				
+				System.out.println(digits(l,u,dig));
+
+	}
+
+
+
+
+
+
+
+
+
+
+Q.2 
+
+Possible Number of decodings
+
+
+
+input 123
+
+output 3

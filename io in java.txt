@@ -1,0 +1,53 @@
+Java IO : Input-output in Java :-
+------------------------------------------
+
+Java brings various Streams with its I/O package that helps the user to perform all the input-output operations. 
+These streams support all the types of objects, data-types, characters, files etc to fully execute the I/O operations.
+
+
+
+
+System.in: This is the standard input stream that is used to read characters from the keyboard or any other standard input device.
+System.out: This is the standard output stream that is used to produce the result of a program on an output device like the computer screen.
+
+
+print(): This method in Java is used to display a text on the console. This text is passed as the parameter to this method in the form of String. 
+
+println(): This method in Java is also used to display a text on the console. It prints the text on the console and the cursor moves to the start of the next line at the console.
+
+printf(): This is the easiest of all methods as this is similar to printf in C. 
+Note that System.out.print() and System.out.println() take a single argument, but printf() may take multiple argument
+
+
+Stream
+A stream is a sequence of data. In Java, a stream is composed of bytes. It's called a stream because it is like a stream of water that continues to flow.
+
+OutputStream vs InputStream
+The explanation of OutputStream and InputStream classes are given below:
+
+OutputStream
+Java application uses an output stream to write data to a destination; it may be a file, an array, peripheral device or socket.
+
+
+InputStream
+Java application uses an input stream to read data from a source; it may be a file, an array, peripheral device or socket.
+
+
+1. InputStream:
+
+abstract int read()
+int available
+void close()
+int read(byte[] b)
+int read(byte[] b, int off, int len)
+
+
+2. OutputStream:
+
+void close()
+void flush()
+void write(byte[] b)
+void write(byte[] b, int off, int len)
+
+
+

@@ -1,0 +1,165 @@
+Inheritance and Constructors in Java:-
+---------------------------------------------------
+
+
+Constructors in Java are used to initialize the values of the attributes of the object serving the goal to bring Java closer to the real world. 
+We already have a default constructor that is called automatically if no constructor is found in the code. 
+But if we make any constructor say parameterized constructor in order to initialize some attributes then
+ it must write down the default constructor because it now will be no more automatically called.   
+
+CODE:-
+----------
+
+
+class Base{
+	Base()
+	{
+		System.out.println("hello my self Base class !");
+	}
+}
+
+class Drived extends Base
+{
+	Drived()
+	{
+		System.out.println("hello my self Drived class !");
+	}
+}
+public class practice {
+
+	public static void main(String[] args) {
+		
+		Drived obj = new Drived();
+		System.out.println(" "+obj);
+	}
+
+}
+
+
+
+Multiple Inheritance:-
+----------------------------
+
+Multiple Inheritance is a feature of an object-oriented concept, where a class can inherit properties of more than one parent class. 
+The problem occurs when there exist methods with the same signature in both the superclasses and subclass
+
+
+
+How are the above problems handled for Default Methods and Interfaces? 
+
+Java 8 supports default methods where interfaces can provide a default implementation of methods.
+ And a class can implement two or more interfaces. In case both the implemented interfaces contain default methods with the same method signature, 
+the implementing class should explicitly specify which default method is to be used in some method excluding the main() of implementing class using super keyword, 
+or it should override the default method in the implementing class, 
+or it should specify which default method is to be used in the default overridden method of the implementing class.
+
+
+CODE:-
+
+
+interface PI1 {
+
+	default void show()
+	{
+		System.out.println("Default PI1");
+	}
+}
+interface PI2 {
+
+
+	default void show()
+	{
+		System.out.println("Default PI2");
+	}
+}
+public class practice implements PI1, PI2 {
+
+	@Override
+	public void show()
+	{
+
+		PI1.super.show();
+		
+		PI2.super.show();
+	
+	}
+	public static void main(String[] args) {
+		
+		practice d = new practice();
+		d.show();
+		d.sum();
+		System.out.println("Now Executing showOfPI1() showOfPI2()");
+		
+	}
+	private void sum() {
+		int a=10;
+		int b=20;
+		System.out.println(a+b);
+		
+	}
+
+}
+
+
+Interfaces and Inheritance in Java:-
+-----------------------------------------------
+
+ Interfaces in Java, Java, and Multiple Inheritance A class can extend another class and/ can implement one and more than one interface.
+
+CODE:
+
+
+interface intfA
+{
+	void m1();
+}
+
+interface intfB
+{
+	void m2() ;
+}
+
+class sample implements intfA, intfB
+{
+	@Override
+	public void m1()
+	{
+		System.out.println("Welcome: inside the method m1");
+	}
+
+	@Override
+	public void m2()
+	{
+		System.out.println("Welcome: inside the method m2");
+	}
+}
+
+class practice
+{
+	public static void main (String[] args)
+	{
+		sample ob1 = new sample();
+
+		ob1.m1();
+		ob1.m2();
+	}
+}
+Interface inheritance : An Interface can extend other interface.
+
+Inheritance is inheriting the properties of parent class into child class.
+ Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object.
+ The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class. 
+ You can also add new methods and fields in your current class.
+ Inheritance represents the IS_A relationship which is also known as parent- child relationship.
+
+
+
+
+
+
+
+Association, Composition and Aggregation in Java:-
+--------------------------------------------------------------------
+
+
+

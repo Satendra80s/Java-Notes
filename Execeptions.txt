@@ -1,0 +1,145 @@
+Exceptions in Java:-
+---------------------------
+
+
+Exception Handling in Java is one of the effective means to handle the runtime errors so that the regular flow of the application can be preserved. 
+Java Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+Exception is an unwanted or unexpected event, which occurs during the execution of a program, i.e. 
+at run time, that disrupts the normal flow of the program’s instructions. Exceptions can be caught and handled by the program.
+
+Major reasons why an exception Occurs:
+
+Invalid user input
+Device failure
+Loss of network connection
+Physical limitations (out of disk memory)
+Code errors
+Opening an unavailable file
+
+Error: An Error indicates a serious problem that a reasonable application should not try to catch.
+Exception: Exception indicates conditions that a reasonable application might try to catch
+
+Types of Exceptions :-
+-----------------------------
+
+User defined Exeception
+
+Bulit-in Exeception
+
+
+Built-in Exceptions:
+Checked Exception
+Unchecked Exception
+
+
+User-Defined Exceptions
+Let us discuss the above-defined listed exception that is as follows:
+
+
+Built-in Exceptions:
+---------------------------
+Built-in exceptions are the exceptions that are available in Java libraries. These exceptions are suitable to explain certain error situations.
+
+Checked Exceptions: Checked exceptions are called compile-time exceptions because these exceptions are checked at compile-time by the compiler.
+---------------------------
+ 
+Unchecked Exceptions: The unchecked exceptions are just opposite to the checked exceptions. The compiler will not check these exceptions at compile time. 
+-------------------------------
+In simple words, if a program throws an unchecked exception, and even if we didn’t handle or declare it, the program would not give a compilation error.
+
+
+
+
+User-Defined Exceptions:
+Sometimes, the built-in exceptions in Java are not able to describe a certain situation. 
+In such cases, users can also create exceptions, which are called ‘user-defined Exceptions’. 
+
+
+
+1. try: The try block contains a set of statements where an exception can occur.
+
+try
+{
+    // statement(s) that might cause exception
+}
+2. catch: The catch block is used to handle the uncertain condition of a try block. 
+A try block is always followed by a catch block, which handles the exception that occurs in the associated try block.
+
+catch
+{
+   // statement(s) that handle an exception
+   // examples, closing a connection, closing
+   // file, exiting the process after writing
+   // details to a log file.
+}
+
+throw: The throw keyword is used to transfer control from the try block to the catch block. 
+
+4. throws: The throws keyword is used for exception handling without try & catch block. 
+It specifies the exceptions that a method can throw to the caller and does not handle itself. 
+
+5. finally: It is executed after the catch block. We use it to put some common code (to be executed irrespective of whether an exception has occurred or not ) 
+when there are multiple catch blocks. 
+
+CODE:-
+
+
+// Java program to demonstrate working of try,
+// catch and finally
+
+class Division {
+	public static void main(String[] args)
+	{
+		int a = 10, b = 5, c = 5, result;
+		try {
+			result = a / (b - c);
+			System.out.println("result" + result);
+		}
+
+		catch (ArithmeticException e) {
+			System.out.println("Exception caught:Division by zero");
+		}
+
+		finally {
+			System.out.println("I am in final block");
+		}
+	}
+}
+
+
+
+
+// Java program to demonstrate working of throws
+class ThrowsExecp {
+
+	
+	static void fun() throws IllegalAccessException
+	{
+		System.out.println("Inside fun(). ");
+		throw new IllegalAccessException("demo");
+	}
+
+	// This is a caller function
+	public static void main(String args[])
+	{
+		try {
+			fun();
+		}
+		catch (IllegalAccessException e) {
+			System.out.println("caught in main.");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

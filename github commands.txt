@@ -1,0 +1,46 @@
+HOW TO IMPORT   FILE IN GITHUB:-
+------------------------------------------------------
+
+STEP  1 
+----------
+create new repository in github.
+
+STEP 2
+----------
+
+open cmd in file location.
+
+STEP 3
+-----------
+
+Now,
+command process.......
+1. git init :-Initialize Git.
+
+2. git add . :-Add your project files.
+
+3. git commit -m "message" :-Commit the changes.
+
+4. git remote add origin <repository url> :-Set the remote repository.
+
+5. git push -u origin master :- Push your code to GitHub.
+
+----------------------------------------------------XXXXXX-------------------------------------------------
+
+UPDATE YOUR REPOSITORY:-
+
+STEP 1.
+
+giti status :- check file status
+
+STEP 2.
+
+git add . :-Add your project files.
+
+STEP 3.
+
+git commit -m "text " :-Commit the changes.
+
+STEP4.
+
+git push origin master :- Push the changes to GitHub.

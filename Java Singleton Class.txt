@@ -1,0 +1,73 @@
+Java Singleton Class:-
+------------------------------
+
+ singleton class is a class that can have only one object (an instance of the class) at a time.
+The primary purpose of a java Singleton class is to restrict the limit of the number of object creations to only one. 
+This often ensures that there is access control to resources, for example, socket or database connection.
+
+
+Inner Class in Java:-
+
+
+In Java, inner class refers to the class that is declared inside class or interface which were mainly introduced, to sum up, 
+same logically relatable classes as Java is purely object-oriented so bringing it closer to the real world.
+
+
+Types of Inner Classes:
+
+Nested Inner Class
+Method Local Inner Classes
+Static Nested Classes
+Anonymous Inner Classes
+
+
+Nested Inner Class:-
+
+It can access any private instance variable of the outer class. Like any other instance variable, we can have access modifier private, protected, public, and default modifier. 
+
+CODE:-
+
+class Outer {
+
+	class Inner {
+
+		public void show()
+		{
+
+			// Print statement
+			System.out.println("In a nested class method");
+		}
+	}
+}
+class Main {
+
+	// Main driver method
+	public static void main(String[] args)
+	{
+		Outer.Inner in = new Outer().new Inner();
+
+		in.show();
+	}
+}
+
+Throwable Class in Java:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

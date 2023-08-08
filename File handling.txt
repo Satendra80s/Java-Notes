@@ -1,0 +1,289 @@
+
+java.io.class :-
+
+Java File class is Java’s representation of a file or directory pathname.
+Because file and directory names have different formats on different platforms, a simple string is not adequate to name them
+
+How to Create a File Object? 
+
+A File object is created by passing in a string that represents the name of a file, a String, or another File object. For example, 
+
+File a = new File("/usr/local/bin/geeks");
+
+
+
+CODE:-
+-----------
+// In this Java program, we accepts a file or directory name
+// from command line arguments. Then the program will check
+// if that file or directory physically exist or not and it
+// displays the property of that file or directory.
+
+import java.io.File;
+
+// Displaying file property
+class fileProperty {
+	public static void main(String[] args)
+	{
+
+		// accept file name or directory name through
+		// command line args
+		String fname = args[0];
+
+		// pass the filename or directory name to File
+		// object
+		File f = new File(fname);
+
+		// apply File class methods on File object
+		System.out.println("File name :" + f.getName());
+		System.out.println("Path: " + f.getPath());
+		System.out.println("Absolute path:"
+						+ f.getAbsolutePath());
+		System.out.println("Parent:" + f.getParent());
+		System.out.println("Exists :" + f.exists());
+
+		if (f.exists()) {
+			System.out.println("Is writable:"
+							+ f.canWrite());
+			System.out.println("Is readable" + f.canRead());
+			System.out.println("Is a directory:"
+							+ f.isDirectory());
+			System.out.println("File Size in bytes "
+							+ f.length());
+		}
+	}
+}
+
+
+
+HOW CAN WE CREATE  FileOutputStream class :
+
+
+code:-
+-------
+
+
+import java.io.FileOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+// Function Helping Create New File
+public class GFG {
+
+	// Main Driver Method
+	public static void main(String args[])
+	{
+		// Creating File Object
+		GFG gfg = new GFG();
+		gfg.newFile();
+	}
+
+	// Function To Create A New File
+	public void newFile()
+	{
+		String strFilePath = "", strFileName = "";
+
+		// Try-Catch Block
+		try {
+
+			// Creating BufferClass Object
+			BufferedReader br = new BufferedReader(
+				new InputStreamReader(System.in));
+			System.out.println("Enter the file name:");
+
+			// Asking file name from User
+			strFileName = br.readLine();
+			System.out.println("Enter the file path:");
+
+			// Asking file path from User
+			strFilePath = br.readLine();
+
+			// Creating Object of FileOutputStream Class
+			FileOutputStream fos = new FileOutputStream(
+				strFilePath + "" + strFileName + ".txt");
+		}
+
+		// Try-Catch Block
+		catch (Exception ex1) {
+		}
+	}
+}
+
+
+
+
+Different ways of Reading a text file in Java:-
+-----------------------------------------------------------
+
+There are multiple ways of writing and reading a text file in Java. this is required while dealing with many applications. 
+
+
+Methods:
+
+Using BufferedReader class
+Using Scanner class
+Using File Reader class
+Reading the whole file in a List
+Read a text file as String
+
+
+
+
+1. BufferedReader class for Reading text file:-
+------------------------------------------------------------
+
+This method reads text from a character-input stream. It does buffer for efficient reading of characters, arrays, and lines. 
+The buffer size may be specified, or the default size may be used. 
+The default is large enough for most purposes. 
+
+Syntax
+
+BufferedReader in = new BufferedReader(Reader in, int size);
+
+code:-
+------
+
+public class FileHandling {
+
+	public static void main(String[] args) throws Exception {
+		
+		File file =new File("C:\\Games\\file_io\\text.txt");
+		
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		
+		String str;
+		
+		while((str = br.readLine())!= null)
+		{
+			System.out.println(str);
+		}
+	}
+}
+
+
+Scanner class for reading text file:-
+----------------------------------------------
+
+A simple text scanner that can parse primitive types and strings using regular expressions.
+A Scanner breaks its input into tokens using a delimiter pattern, which by default matches whitespace
+
+code:-
+
+import java.io.File;
+import java.util.Scanner;
+public class ReadFromFileUsingScanner {
+	public static void main(String[] args) throws Exception
+	{
+		File file = new File(
+			"C:\\Users\\pankaj\\Desktop\\test.txt");
+		Scanner sc = new Scanner(file);
+
+		while (sc.hasNextLine())
+			System.out.println(sc.nextLine());
+	}
+}
+
+
+Java Program to Write into a File:-
+-----------------------------------------------
+
+va FileWriter class in java is used to write character-oriented data to a file as this class is character-oriented 
+class because of what it is used in file handling in java. 
+
+Using writeString() method
+Using FileWriter Class
+Using BufferedWriter Class
+Using FileOutputStream Class
+
+
+writeString() method:-
+-----------------------------
+
+This method is supported by Java version 11. This method can take four parameters. 
+These are file path, character sequence, charset, and options. The first two parameters are mandatory for this method to write into a file. 
+
+code:-
+------
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+// Main class
+public class GFG {
+
+	// Main driver method
+	public static void main(String[] args)
+		throws IOException
+	{
+		// Assigning the content of the file
+		String text
+			= "Welcome to geekforgeeks\nHappy Learning!";
+
+		// Defining the file name of the file
+		Path fileName = Path.of(
+			"/Users/mayanksolanki/Desktop/demo.docx");
+		Files.writeString(fileName, text);
+		String file_content = Files.readString(fileName);
+
+		System.out.println(file_content);
+	}
+}
+
+
+Delete a File Using Java:-
+---------------------------------
+
+Java provides methods to delete files using java programs. On contrary to normal delete operations in any operating system, 
+files being deleted using the java program are deleted permanently without being moved to the trash/recycle bin. 
+
+Methods used to delete a file in Java: 
+1. Using java.io.File.delete() function: Deletes the file or directory denoted by this abstract pathname. 
+
+Syntax: 
+
+public boolean delete()
+
+CODE:
+
+// Java program to delete a file
+import java.io.*;
+
+public class Test {
+	public static void main(String[] args)
+	{
+		File file
+			= new File("C:\\Users\\Mayank\\Desktop\\1.txt");
+
+		if (file.delete()) {
+			System.out.println("File deleted successfully");
+		}
+		else {
+			System.out.println("Failed to delete the file");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

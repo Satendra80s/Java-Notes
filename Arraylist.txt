@@ -1,0 +1,149 @@
+List Interface:-
+
+It is baselly use for when user print output in a continue manner . it is given output in continue section like
+
+Ex: null--> 1->2->3->4->
+
+it has some interface 
+
+
+* Arraylist
+
+* LinkedList
+
+* Stack
+
+* Vector 
+
+
+
+Arraylist :
+
+it is like normal arrya . but it has  Dynamiclly size Java ArrayList class uses a dynamic array for storing the elements. 
+It is like an array, but there is no size limit. We can add or remove elements anytime. 
+So, it is much more flexible than the traditional array. It is found in the java.util package.
+
+it increes array size 
+like 
+size =n;
+n+ n/2+1;
+
+
+
+method:
+-----------
+
+add: use for add element.
+
+
+Code:-
+--------
+import java.util.*;
+public class collection {
+
+	public static void main(String[] args) {
+	
+		
+		ArrayList<String> student=new ArrayList<>(); //it genrate empty array
+		
+		student.add("satendra");
+		student.add("sandeep");
+		student.add("sajoy");
+		student.add("subhama");
+		student.add("surand");
+		student.add("seema");
+		
+		System.out.println(student);
+		
+	}
+}
+
+Add in mid in array list
+
+CODE:-
+--------
+
+import java.util.*;
+public class collection {
+
+	public static void main(String[] args) {
+	
+		
+		ArrayList<String> student=new ArrayList<>(); //it genrate empty array
+		
+		student.add("satendra");
+		student.add("sandeep");
+		student.add("sajoy");
+		student.add("subhama");
+		student.add("surand");
+		student.add("seema");
+		
+		System.out.println(student);
+		
+		student.add(4, "ram");  //method overloding
+		System.out.println(student);
+	}
+
+}
+
+get():-
+
+use for get element by indexing 
+
+System.out.println(student.get(2));
+
+
+remove():-
+use for remove elemnet in list 
+it has two way
+
+1. by using indexing:-
+ student.remove(2);
+		System.out.println(student);
+
+2. by using element:-
+
+student.remove(String.valueOf("satendra"));
+		System.out.println(student);
+		
+
+Clear();-
+               use for remove all element in list
+
+student.clear();
+
+
+Set():-
+
+chenage value in Array list  
+
+student.set(1, "Hello");
+		System.out.println(student);
+
+
+contains:-
+ use for check value
+
+student.contains("Hello");
+
+
+
+Q. How to itrate function in arraylist?
+
+		for(int i=0;i<student.size();i++)
+		{
+			System.out.println("the element is:" + student.get(i));
+		}
+
+for each:-
+
+for(String element: student)
+{
+System.out.println(element);
+
+}
+
+
+
+
+

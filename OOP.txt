@@ -1,0 +1,1028 @@
+Object Oriented Programming (OOPs) Concept in Java :-
+--------------------------------------------------------------------------------
+
+OOPs refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code.
+Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc. in programming.
+
+OOPS concepts are as follows: 
+
+Class
+Object 
+Method and method passing
+Pillars of OOPs
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+Compile-time polymorphism
+Runtime polymorphism
+
+
+CLASS:-
+------------
+
+A class is a user-defined blueprint or prototype from which objects are created. 
+It represents the set of properties or methods that are common to all objects of one type.
+Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times.
+
+
+
+OBJECT:-
+---------------
+
+An object is a basic unit of Object-Oriented Programming that represents real-life entities. 
+A typical Java program creates many objects, which as you know, interact by invoking methods.
+The objects are what perform your code, they are the part of your code visible to the viewer/user. 
+
+
+
+
+METHOD:-
+--------------
+
+A method is a collection of statements that perform some specific task and return the result to the caller.
+A method can perform some specific task without returning anything. Methods allow us to reuse the code without retyping it, 
+
+
+CODE :-
+
+public class GFG {     //MAIN CLASSS
+      
+    static String Employee_name;
+    static float Employee_salary;
+  
+    static void set(String n, float p) {        //method 
+        Employee_name  = n;
+        Employee_salary  = p;
+    }
+  
+    static void get() {                           //method
+        System.out.println("Employee name is: " +Employee_name );
+        System.out.println("Employee CTC is: " + Employee_salary);
+    }
+  
+    public static void main(String args[]) {
+        GFG.set("Rathod Avinash", 10000.0f);  //OBJECT 
+        GFG.get();
+    }
+}
+
+
+
+* Abstraction:-
+   ----------------
+
+Abstraction is a feature of OOPs. The feature allows us to hide the implementation detail from the user and shows only the functionality of the programming to the user.
+Because the user is not interested to know the implementation. It is also safe from the security point of view.
+
+abstraction is achieved by interfaces and abstract classes.
+
+Using Abstract Class:-
+Abstract classes are the same as normal Java classes the difference is only that an abstract class uses abstract keyword while the normal Java class does not use. 
+We use the abstract keyword before the class name to declare the class as abstract.
+
+
+SYNTEX:-
+
+public abstract demo{
+
+public abstract main
+{
+}
+
+}
+
+CODE:-
+
+abstract class Demo  
+{  
+abstract void display();  
+}  
+
+public class MainClass extends Demo  
+{  
+void display()  
+{  
+System.out.println("Abstract method called.");  
+}  
+public static void main(String[] args)  
+{    
+MainClass obj = new MainClass ();  
+obj.display();  
+}  
+}  
+
+
+
+Using Interface
+In Java, an interface is similar to Java classes.
+The difference is only that an interface contains empty methods (methods that do not have method implementation) and variables. 
+In other words, it is a collection of abstract methods (the method that does not have a method body) and static constants.
+
+Syntax:
+
+public interface XYZ   
+{  
+public void method();  
+}  
+
+
+CODE:-
+----------
+interface CarStart  
+{    
+void start();    
+}    
+interface CarStop  
+{    
+void stop();    
+}    
+public class Car implements CarStart, CarStop  
+{    
+public void start()  
+{  
+System.out.println("The car engine has been started.");  
+}    
+public void stop()  
+{  
+System.out.println("The car engine has been stopped.");  
+}    
+public static void main(String args[])  
+{    
+Car c = new Car();    
+c.start();    
+c.stop();    
+}  
+}
+
+
+Encapsulation in Java:-
+
+Encapsulation in Java is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
+We can create a fully encapsulated class in Java by making all the data members of the class private. Now we can use setter and getter methods to set and get the data in it.
+
+class Employee {
+    private int empid;
+      private String ename;
+}
+
+
+code:
+-------
+//It has a private data member and getter and setter methods.  
+class Account {  
+//private data members  
+private long acc_no;  
+private String name,email;  
+private float amount;  
+//public getter and setter methods  
+public long getAcc_no() {  
+    return acc_no;  
+}  
+public void setAcc_no(long acc_no) {  
+    this.acc_no = acc_no;  
+}  
+public String getName() {  
+    return name;  
+}  
+public void setName(String name) {  
+    this.name = name;  
+}  
+public String getEmail() {  
+    return email;  
+}  
+public void setEmail(String email) {  
+    this.email = email;  
+}  
+public float getAmount() {  
+    return amount;  
+}  
+public void setAmount(float amount) {  
+    this.amount = amount;  
+}  
+  
+}  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#2
+
+
+
+public class TestEncapsulation {  
+public static void main(String[] args) {  
+    //creating instance of Account class  
+    Account acc=new Account();  
+    //setting values through setter methods  
+    acc.setAcc_no(7560504000L);  
+    acc.setName("Sonoo Jaiswal");  
+    acc.setEmail("sonoojaiswal@javatpoint.com");  
+    acc.setAmount(500000f);  
+    //getting values through getter methods  
+    System.out.println(acc.getAcc_no()+" "+acc.getName()+" "+acc.getEmail()+" "+acc.getAmount());  
+}  
+}  
+
+
+Inheritance 
+Inheritance is an important pillar of OOP (Object Oriented Programming). 
+It is the mechanism in Java by which one class is allowed to inherit the features (fields and methods) of another class. 
+We are achieving inheritance by using extends keyword.
+Inheritance is also known as “is-a” relationship.
+
+
+SYNTEX:-
+
+class A{
+  //parent class methods
+  void method1(){}
+  void method2(){}
+}
+  
+//derived class or child class or base class
+class B extends A{  //Inherits parent class methods
+  //child class methods
+  void method3(){}
+  void method4(){}
+}
+
+
+Polymorphism:-
+--------------------
+
+Polymorphism in Java is a concept by which we can perform a single action in different ways. Polymorphism is derived from 2 Greek words: poly and morphs. 
+The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
+
+there is two type of  Polymorphism:
+
+Overloading
+Overriding 
+
+
+Q. Why Java is not a purely Object-Oriented Language?
+
+java is not a purely object orirnted language because it is use  primitive data type. some more properties:
+
+Primitive Data Type ex. int, long, bool, float, char, etc as Objects:-  Smalltalk is a “pure” object-oriented programming language unlike 
+Java and C++ as there is no difference between values which are objects and values which are primitive types. 
+
+The static keyword:  When we declares a class as static then it can be used without the use of an object in Java. 
+If we are using static function or static variable then we can’t call that function or variable by using dot(.) or class object defying object oriented feature.
+
+
+Wrapper Class: Wrapper class provides the mechanism to convert primitive into object and object into primitive. 
+In Java, you can use Integer, Float etc. instead of int, float etc. 
+We can communicate with objects without calling their methods. ex. using arithmetic operators.
+
+
+
+Classes:-
+
+A Java class is a set of object which shares common characteristics/ behavior and common properties/ attributes.
+
+Class is not a real-world entity. It is just a template or blueprint or prototype from which objects are created.
+Class does not occupy memory.
+Class is a group of variables of different data types and a group of methods
+
+A Class in Java can contain...........
+
+Data member
+Method
+Constructor
+Nested Class
+Interface
+
+
+// Main class
+class GFG {
+ 
+    String name = "GeeksForGeeks";
+ 
+    // Main method
+    public static void main(String[] args)
+    {
+       
+        try {
+            Class cls = Class.forName("GFG");
+            // Creating object of main class
+            // using instance method
+            GFG obj = (GFG)cls.newInstance();
+            // Print and display
+            System.out.println(obj.name);
+        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (InstantiationException e) {
+ 
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e) {
+ 
+            e.printStackTrace();
+        }
+    }
+}
+
+Objects in Java
+It is a basic unit of Object-Oriented Programming and represents real-life entities. 
+A typical Java program creates many objects, which as you know, interact by invoking methods. An object consists of : 
+
+State: It is represented by attributes of an object. It also reflects the properties of an object.
+Behavior: It is represented by the methods of an object. It also reflects the response of an object with other objects.
+Identity: It gives a unique name to an object and enables one object to interact with other objects.
+
+
+Ways to Create an Object of a Class
+There are four ways to create objects in Java. Strictly speaking, there is only one way(by using a new keyword), and the rest internally use a new keyword. 
+
+1. Using new keyword
+It is the most common and general way to create an object in Java. 
+
+Example:
+
+// creating object of class Test
+Test t = new Test();
+
+
+2. Using Class.forName(String className) method
+There is a pre-defined class in java.lang package with name Class. 
+The forName(String className) method returns the Class object associated with the class with the given string name. 
+We have to give a fully qualified name for a class. 
+On calling the new Instance() method on this Class object returns a new instance of the class with the given string name.
+
+// creating object of public class Test
+// consider class Test present in com.p1 package
+Test obj = (Test)Class.forName("com.p1.Test").newInstance();
+
+3. Using clone() method
+clone() method is present in the Object class. It creates and returns a copy of the object.
+
+        
+// creating object of class Test
+Test t1 = new Test();
+
+// creating clone of above object
+Test t2 = (Test)t1.clone();
+
+
+4. Deserialization
+De-serialization is a technique of reading an object from the saved state in a file. 
+
+            
+FileInputStream file = new FileInputStream(filename);
+ObjectInputStream in = new ObjectInputStream(file);
+Object obj = in.readObject();
+
+
+Difference between Java Class and Objects
+The difference between Class and Object are as follows: 
+
+Class                                                                                     Object
+
+Class is the blueprint of an object.                                An object is an instance of the class.
+It is used to create objects.	
+
+
+No memory is allocated when a class is declared.     Memory is allocated as soon as an object is created.
+
+
+A class is a group of similar objects.	                      An object is a real-world entity such as a book, car, etc.
+
+Class is a logical entity.	                                          An object is a physical entity.
+
+A class can only be declared once.	                                Objects can be created many times as per requirement.
+
+An example of class can be a car.	                                Objects of the class car can be BMW, Mercedes, Ferrari, etc.
+
+
+Java Methods:-
+
+The method in Java or Methods of Java is a collection of statements that perform some specific task and return the result to the caller.
+ A Java method can perform some specific task without returning anything. Java Methods allow us to reuse the code without retyping the code. 
+
+Syntax of Method
+<access_modifier> <return_type> <method_name>( list_of_parameters)
+{
+    //body
+}
+
+
+Method Declaration:-
+
+Modifier.
+
+The return type: The data type of the value returned by the method or void if does not return a value. It is Mandatory in syntax.
+
+Method Name: the rules for field names apply to method names as well, but the convention is a little different. It is Mandatory in syntax.
+
+Parameter list: Comma-separated list of the input parameters is defined, preceded by their data type, within the enclosed parenthesis. If there are no parameters, you must use empty parentheses ().  It is Optional in syntax.
+
+Exception list: The exceptions you expect by the method can throw, you can specify these exception(s). It is Optional in syntax.
+
+Method body: it is enclosed between braces. The code you need to be executed to perform your intended operations. 
+
+
+Java Constructors:-
+
+
+What are Constructors in Java?
+
+In Java, Constructor is a block of codes similar to the method. It is called when an instance of the class is created. 
+At the time of calling the constructor, memory for the object is allocated in the memory. It is a special type of method that is used to initialize the object.
+Every time an object is created using the new() keyword, at least one constructor is called.
+
+
+Code:-
+
+
+class Geeks {
+    // Constructor
+    Geeks()
+    {
+        super();
+        System.out.println("Constructor Called");
+    }
+ 
+    // main function
+    public static void main(String[] args)
+    {
+        Geeks geek = new Geeks();
+    }
+}
+
+
+
+Types of Constructors in Java
+
+Default Constructor
+Parameterized Constructor
+Copy Constructor
+
+
+Q1. What is a constructor in Java?
+Ans:
+
+A constructor in Java is a special method used to initialize objects.
+
+Q2. Can a Java constructor be private?
+Ans:
+
+Yes, a constructor can be declared private. A private constructor is used in restricting object creation.
+
+
+Inheritance in Java:-
+It is the mechanism in Java by which one class is allowed to inherit the features(fields and methods) of another class.
+ In Java, Inheritance means creating new classes based on existing ones. 
+A class that inherits from another class can reuse the methods and fields of that class. 
+
+CODE:-
+
+class Employee {
+    int salary = 60000;
+}
+  
+// Inherited or Sub Class
+class Engineer extends Employee {
+    int benefits = 10000;
+}
+  
+// Driver Class
+class Gfg {
+    public static void main(String args[])
+    {
+        Engineer E1 = new Engineer();
+        System.out.println("Salary : " + E1.salary
+                           + "\nBenefits : " + E1.benefits);
+    }
+}
+
+WHY Inheritance IS IMPORTAN ?
+
+Code Reusability.
+Method Overriding.
+Abstraction.
+
+
+
+Important Terminologies Used in Java Inheritance
+
+Class: Class is a set of objects which shares common characteristics/ behavior and common properties/ attributes. Class is not a real-world entity. 
+It is just a template or blueprint or prototype from which objects are created.
+
+Super Class/Parent Class: The class whose features are inherited is known as a superclass.
+
+Sub Class/Child Class: The class that inherits the other class is known as a subclass.
+The subclass can add its own fields and methods in addition to the superclass fields and methods.
+
+Reusability: Inheritance supports the concept of “reusability”.
+when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class.
+
+
+Single Inheritance
+In single inheritance, subclasses inherit the features of one superclass.
+
+EX:
+         A                   <----------              B
+(BASE CLASS)                   (DRIVED CLASS)      
+
+code:-
+
+class one {
+    public void print_geek()
+    {
+        System.out.println("Geeks");
+    }
+}
+  
+class two extends one {
+    public void print_for() {
+ System.out.println("for");
+ }
+}
+  
+// Driver class
+public class Main {
+      
+    public static void main(String[] args)
+    {
+        two g = new two();
+        g.print_geek();
+        g.print_for();
+        g.print_geek();
+    }
+}
+
+
+ Multilevel Inheritance:-
+
+ a derived class will be inheriting a base class, and as well as the derived class also acts as the base class for other classes
+
+EX:
+
+            A           <-----------                         B                         <----------          C
+(BASE CLASS)                ( INTERMEDITOY CLASS)             (DRIVED CLASS)
+
+code:-
+
+class one {
+    public void print_geek()
+    {
+        System.out.println("Geeks");
+    }
+}
+  
+class two extends one {
+    public void print_for() { System.out.println("for"); }
+}
+  
+class three extends two {
+    public void print_geek()
+    {
+        System.out.println("Geeks");
+    }
+}
+  
+// Drived class
+public class Main {
+    public static void main(String[] args)
+    {
+        three g = new three();
+        g.print_geek();
+        g.print_for();
+        g.print_geek();
+    }
+}
+
+
+
+
+Hierarchical Inheritance
+In Hierarchical Inheritance, one class serves as a superclass (base class) for more than one subclass. 
+
+
+CODE:-
+
+class A {
+    public void print_A() { System.out.println("Class A"); }
+}
+  
+class B extends A {
+    public void print_B() { System.out.println("Class B"); }
+}
+  
+class C extends A {
+    public void print_C() { System.out.println("Class C"); }
+}
+  
+class D extends A {
+    public void print_D() { System.out.println("Class D"); }
+}
+  
+// Driver Class
+public class Test {
+    public static void main(String[] args)
+    {
+        B obj_B = new B();
+        obj_B.print_A();
+        obj_B.print_B();
+  
+        C obj_C = new C();
+        obj_C.print_A();
+        obj_C.print_C();
+  
+        D obj_D = new D();
+        obj_D.print_A();
+        obj_D.print_D();
+    }
+}
+
+Multiple Inheritance (Through Interfaces):-
+
+In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes. 
+Please note that Java does not support multiple inheritances with classes. 
+
+
+CODE:
+interface one {
+    public void print_geek();
+}
+  
+interface two {
+    public void print_for();
+}
+  
+interface three extends one, two {
+    public void print_geek();
+}
+class child implements three {
+    @Override 
+public void print_geek()
+    {
+        System.out.println("Geeks");
+    }
+  
+    public void print_for() { System.out.println("for"); }
+}
+  
+// Drived class
+public class Main {
+    public static void main(String[] args)
+    {
+        child c = new child();
+        c.print_geek();
+        c.print_for();
+        c.print_geek();
+    }
+}
+
+
+Hybrid Inheritance(Through Interfaces)
+It is a mix of two or more of the above types of inheritance. Since Java doesn’t support multiple inheritances with classes, 
+hybrid inheritance is also not possible with classes. In Java, we can achieve hybrid inheritance only through Interfaces.
+ 
+
+
+
+
+
+
+1. What is Inheritance Java?
+Inheritance is a concept of OOPs where one class inherits from another class that can reuse the methods and fields of the parent class.
+
+2. What are the 4 types of inheritance in Java?
+There are Single, Multiple, Multilevel, and Hybrid.
+
+3. What is the use of extend keyword?
+Extend keyword is used for inheriting one class into another.
+
+4. What is an example of inheritance in Java?
+
+
+
+
+Abstraction in Java:-
+
+
+What is Abstraction in Java?
+In Java, abstraction is achieved by interfaces and abstract classes. We can achieve 100% abstraction using interfaces.
+
+Data Abstraction may also be defined as the process of identifying only the required characteristics of an object ignoring the irrelevant details. 
+
+CODE:-
+
+abstract class Animal {
+    private String name;
+ 
+    public Animal(String name) { this.name = name; }
+ 
+    public abstract void makeSound();
+ 
+    public String getName() { return name; }
+}
+ 
+// Abstracted class
+class Dog extends Animal {
+    public Dog(String name) { super(name); }
+ 
+    public void makeSound()
+    {
+        System.out.println(getName() + " barks");
+    }
+}
+ 
+// Abstracted class
+class Cat extends Animal {
+    public Cat(String name) { super(name); }
+ 
+    public void makeSound()
+    {
+        System.out.println(getName() + " meows");
+    }
+}
+ 
+// Driver Class
+public class AbstractionExample {
+    // Main Function
+    public static void main(String[] args)
+    {
+        Animal myDog = new Dog("Buddy");
+        Animal myCat = new Cat("Fluffy");
+ 
+        myDog.makeSound();
+        myCat.makeSound();
+    }
+}
+
+
+
+Encapsulation vs Data Abstraction:-
+
+Encapsulation is data hiding(information hiding) while Abstraction is detailed hiding(implementation hiding).
+While encapsulation groups together data and methods that act upon the data, data abstraction deal with exposing the interface to the user and hiding the details of implementation.
+Encapsulated classes are Java classes that follow data hiding and abstraction We can implement abstraction by using abstract classes and interfaces. 
+Encapsulation is a procedure that takes place at the implementation level, while abstraction is a design-level process.
+
+
+
+Encapsulation in Java:-
+
+Encapsulation is a fundamental concept in object-oriented programming (OOP) that refers to the bundling of data and methods that operate on that data within a single unit, 
+which is called a class in Java. 
+Encapsulation is a way of hiding the implementation details of a class from outside access and 
+only exposing a public interface that can be used to interact with the class.
+
+
+CODE:-
+
+
+class Person {
+    private String name;
+    private int age;
+ 
+    public String getName() { return name; }
+ 
+    public void setName(String name) { this.name = name; }
+ 
+    public int getAge() { return age; }
+ 
+    public void setAge(int age) { this.age = age; }
+}
+ 
+public class Main {
+    public static void main(String[] args)
+    {
+        Person person = new Person();
+        person.setName("John");
+        person.setAge(30);
+ 
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+    }
+}
+
+
+
+
+Polymorphism in Java:-
+
+
+What is Polymorphism in Java?
+Polymorphism is considered one of the important features of Object-Oriented Programming. 
+Polymorphism allows us to perform a single action in different ways. In other words, polymorphism allows 
+you to define one interface and have multiple implementations. 
+The word “poly” means many and “morphs” means forms, So it means many forms.
+
+Types of Java polymorphism:-
+
+* Compile-time Polymorphism
+* Runtime Polymorphism
+
+ Compile-time Polymorphism:-
+
+It is also known as static polymorphism. This type of polymorphism is achieved by function overloading or operator overloading. 
+
+
+Method Overloading
+When there are multiple functions with the same name but different parameters then these functions are said to be overloaded. 
+Functions can be overloaded by changes in the number of arguments or/and a change in the type of arguments.
+
+CODE:-
+
+class Helper {
+ 
+    static int Multiply(int a, int b)
+    {
+ 
+        // Returns product of integer numbers
+        return a * b;
+    }
+ 
+    // Method 2
+    // With same name but with 2 double parameters
+    static double Multiply(double a, double b)
+    {
+ 
+        // Returns product of double numbers
+        return a * b;
+    }
+}
+ 
+// Class 2
+// Main class
+class GFG {
+ 
+    // Main driver method
+    public static void main(String[] args)
+    {
+        System.out.println(Helper.Multiply(2, 4));
+        System.out.println(Helper.Multiply(5.5, 6.3));
+    }
+}
+
+Runtime Polymorphism:-
+
+It is also known as Dynamic Method Dispatch. It is a process in which a function call to the overridden method is resolved at Runtime.
+ This type of polymorphism is achieved by Method Overriding. 
+Method overriding, on the other hand, occurs when a derived class has a definition for one of the member functions of the base class. 
+
+
+
+CODE:-
+
+class Parent {
+ 
+    // Method of parent class
+    void Print()
+    {
+ 
+        // Print statement
+        System.out.println("parent class");
+    }
+}
+ 
+// Class 2
+// Helper class
+class subclass1 extends Parent {
+ 
+    // Method
+    void Print() { System.out.println("subclass1"); }
+}
+ 
+// Class 3
+// Helper class
+class subclass2 extends Parent {
+ 
+    // Method
+    void Print()
+    {
+ 
+        // Print statement
+        System.out.println("subclass2");
+    }
+}
+ 
+// Class 4
+// Main class
+class GFG {
+ 
+    // Main driver method
+    public static void main(String[] args)
+    {
+ 
+        // Creating object of class 1
+        Parent a;
+ 
+        // Now we will be calling print methods
+        // inside main() method
+ 
+        a = new subclass1();
+        a.Print();
+ 
+        a = new subclass2();
+        a.Print();
+    }
+}
+
+
+Method Overriding in Java:-
+
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+
+In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding
+
+
+
+
+Interfaces in Java:-
+-------------------------
+
+The interface in Java is a mechanism to achieve abstraction. 
+There can be only abstract methods in the Java interface, not method body.
+ It is used to achieve abstraction and multiple inheritance in Java.
+
+In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body.
+
+
+CODE:-
+----------
+interface printable{  
+void print();  
+}  
+class A6 implements printable{  
+public void print(){System.out.println("Hello");}  
+  
+public static void main(String args[]){  
+A6 obj = new A6();  
+obj.print();  
+ }  
+}  
+
+Multiple inheritance in Java by interface:-
+--------------------------------------------------------
+If a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance.
+
+CODE:-
+
+interface Printable{  
+void print();  
+}  
+interface Showable{  
+void show();  
+}  
+class A7 implements Printable,Showable{  
+public void print(){System.out.println("Hello");}  
+public void show(){System.out.println("Welcome");}  
+  
+public static void main(String args[]){  
+A7 obj = new A7();  
+obj.print();  
+obj.show();  
+ }  
+}  
+
+
+Q.)  Multiple inheritance is not supported through class in java, but it is possible by an interface, why?
+As we have explained in the inheritance chapter, multiple inheritance is not supported in the case of class because of ambiguity. 
+However, it is supported in case of an interface because there is no ambiguity. 
+
+
+
+
+Q) What is marker or tagged interface?
+An interface which has no member is known as a marker or tagged interface, for example, Serializable, Cloneable, Remote, etc. 
+They are used to provide some essential information to the JVM so that JVM may perform some useful operation.
+
+Q)Difference between Abstract Class and Interface in Hindi
+
+Abstract Class	                                                                                                   Interface
+Abstract class के पास abstract और non-abstract                                     Interface के पास केवल abstract methods होती हैं.                                                                                                                      Java 8 से इसके पास default और static methods भी हो सकती हैं.
+दोनों प्रकार के methods हो सकते हैं.	                                                           it also support static and defult method in jdk 8.
+                                                                                                         
+यह multiple inheritance को सपोर्ट नहीं करता.	                                       यह multiple inheritance को सपोर्ट करता है.
+
+इसके पास final, non-final, static और                                                         इसके पास केवल static और final variables होते हैं.
+non-static variables हो सकते हैं.
+
+abstract कीवर्ड का प्रयोग abstract class को declare करने के                     	interface कीवर्ड का प्रयोग इंटरफ़ेस को declare करने के लिए किया जाता है.
+लिए किया जाता है.
+
+एक abstract class दूसरी java class को extend कर सकती है                        एक इंटरफ़ेस केवल दूसरे इंटरफ़ेस को extend कर सकता है.
+और बहुत सारें interfaces को implement कर सकता है.	
+
+
+
+
+‘this’ reference in Java:--
+--------------------------------
+
+ ‘this’ is a reference variable that refers to the current object, or can be said “this” in Java is a keyword that refers to the current object instance. 
+It can be used to call current class methods and fields, to pass an instance of the current class as a parameter, 
+and to differentiate between the local and instance variables.
+
+
+
+
+
+
+
+
